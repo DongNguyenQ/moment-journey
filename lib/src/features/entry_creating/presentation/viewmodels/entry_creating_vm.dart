@@ -8,7 +8,6 @@ import '../../../media/domain/repositories/i_media_repository.dart';
 class EntryCreatingViewModel with ChangeNotifier {
   final IMediaRepository _mediaRepository;
   
-
   EntryCreatingViewModel(this._mediaRepository);
 
   void selectImages() {

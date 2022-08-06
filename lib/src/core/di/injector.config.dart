@@ -9,7 +9,7 @@ import 'package:image_picker/image_picker.dart' as _i11;
 import 'package:injectable/injectable.dart' as _i2;
 
 import '../../commons/utils/platform_utils.dart' as _i15;
-import '../../features/auth/data/repositories/auth_repository_impl.dart' as _i5;
+import '../../features/auth/data/repositories/impl_auth_repository.dart' as _i5;
 import '../../features/auth/domain/repositories/i_auth_repository.dart' as _i4;
 import '../../features/entries_listing/data/datasources/i_entry_local_datasource.dart'
     as _i7;

@@ -12,19 +12,16 @@ class AuthRepositoryImpl implements AuthRepository {
 
   @override
   Future<bool> logout() {
-    // TODO: implement logout
     throw UnimplementedError();
   }
 
   @override
   Future<Either<UserModel, Failure>> signIn() {
-    // TODO: implement signIn
     throw UnimplementedError();
   }
 
   @override
   Future<Either<UserModel, Failure>> signUp() {
-    // TODO: implement signUp
     throw UnimplementedError();
   }
 
