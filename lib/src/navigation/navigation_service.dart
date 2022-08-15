@@ -1,5 +1,5 @@
-import 'package:flutter/cupertino.dart';
-import 'package:moment_journey/src/features/entries_listing/domain/entities/entry_entity.dart';
+import 'package:flutter/material.dart';
+
 import 'router.dart';
 import '../core/di/di.dart';
 
@@ -74,7 +74,9 @@ class NavigationService {
       {NavType? type, BuildContext? ctx}) =>
     _navHandlerNamed(rnProfile, ctx: ctx, type: type);
 
-
+  static void navAtlasPage(
+      {NavType? type, BuildContext? ctx}) =>
+    _navHandlerNamed(rnAtlas, ctx: ctx, type: type);
 
 
   static void _navHandler(String path,

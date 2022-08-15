@@ -5,3 +5,8 @@ class Failure {
 
   Failure.unknow() : error = 'Something wrong happened';
 }
+
+class Error {
+
+}
+

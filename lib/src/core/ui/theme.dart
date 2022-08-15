@@ -3,16 +3,14 @@ import 'package:flutter/services.dart';
 
 import '../../commons/commons.dart';
 
+/// Theme detail : https://stackoverflow.com/questions/61312511/themedata-deprecated-title-argument
 class AppTheme {
   ThemeData buildTheme(BuildContext ctx) {
     return ThemeData(
-      // textTheme: TextStyle(
-      //   // fontFamily:
-      // )
+      textTheme: ThemeData.light().textTheme.copyWith(
+        
+      ),
       // scaffoldBackgroundColor: Colors.white,
-      // appBarTheme: AppBarTheme(
-      //   backgroundColor: Colors.white
-      // ),
       appBarTheme: ktAppBar,
       inputDecorationTheme: ktInputDecoration
     );

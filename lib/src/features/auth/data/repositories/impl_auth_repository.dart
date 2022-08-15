@@ -8,8 +8,6 @@ import '../../domain/repositories/i_auth_repository.dart';
 @Singleton(as: AuthRepository)
 class AuthRepositoryImpl implements AuthRepository {
 
-
-
   @override
   Future<bool> logout() {
     throw UnimplementedError();

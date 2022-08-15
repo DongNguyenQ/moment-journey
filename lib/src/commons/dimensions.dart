@@ -27,3 +27,35 @@ const Widget HorizontalSpacing16 = SizedBox(width: AppDimensions.spacing16);
 const Widget HorizontalSpacing20 = SizedBox(width: AppDimensions.spacing20);
 const Widget HorizontalSpacing24 = SizedBox(width: AppDimensions.spacing24);
 const Widget HorizontalSpacing28 = SizedBox(width: AppDimensions.spacing28);
+
+class HGap extends StatelessWidget {
+  final double size;
+  const HGap({Key? key, required this.size}) : super(key: key);
+  const HGap.sm({Key? key}) : size = AppDimensions.spacing04, super(key: key);
+  const HGap.md({Key? key}) : size = AppDimensions.spacing08, super(key: key);
+  const HGap.lg({Key? key}) : size = AppDimensions.spacing12, super(key: key);
+  const HGap.ggt({Key? key}) : size = AppDimensions.spacing20, super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      width: size,
+    );
+  }
+}
+
+class VGap extends StatelessWidget {
+  final double size;
+  const VGap({Key? key, required this.size}) : super(key: key);
+  const VGap.sm({Key? key}) : size = AppDimensions.spacing04, super(key: key);
+  const VGap.md({Key? key}) : size = AppDimensions.spacing08, super(key: key);
+  const VGap.lg({Key? key}) : size = AppDimensions.spacing12, super(key: key);
+  const VGap.ggt({Key? key}) : size = AppDimensions.spacing20, super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      height: size,
+    );
+  }
+}

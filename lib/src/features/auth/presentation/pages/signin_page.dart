@@ -77,7 +77,7 @@ class _TitleView extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: const [
-        Text('Moments Journey', style: TextStyle(
+        Text(AppStrings.appName, style: TextStyle(
           fontWeight: FontWeight.bold,
           fontSize: 40
         ),),

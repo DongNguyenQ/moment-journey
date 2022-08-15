@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import '../di/di.dart';
 
-extension TextExtensions on Text {
-
-}
+extension TextExtensions on Text {}
 
 extension FormatedDateTime on DateTime {
   String get asVNFormat {
@@ -36,3 +34,5 @@ extension FormatedCurrency on double {
   String get asCurrency => _asVNCurrency;
   String get asDoubleFormatCurrency => asMoney();
 }
+
+extension ThemeExtensions on BuildContext {}

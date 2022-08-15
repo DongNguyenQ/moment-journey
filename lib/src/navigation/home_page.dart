@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:moment_journey/src/features/entries_listing/entries_listing.dart';
-import 'package:moment_journey/src/features/profile/presentation/pages/profile_page.dart';
 
+import '../features/account/account.dart';
+import '../features/entry/entry.dart';
 import 'navigation.dart';
 
 class HomePage extends StatefulWidget {
@@ -27,17 +27,21 @@ class _HomePageState extends State<HomePage> {
     _selectedIndex = widget.index;
   }
 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: BottomNavigationBar(
         items: const [
-          BottomNavigationBarItem(icon: Icon(Icons.description_outlined), label: 'Entries'),
-          BottomNavigationBarItem(icon: Icon(Icons.account_circle_outlined), label: 'Profile'),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.description_outlined), label: 'Entries'),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.account_circle_outlined), label: 'Atlas'),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.account_circle_outlined), label: 'Profile'),
         ],
         currentIndex: _selectedIndex,
         onTap: (index) {
+          print('INDEX : $index');
           setState(
             () {
               _selectedIndex = index;
@@ -46,6 +50,9 @@ class _HomePageState extends State<HomePage> {
                   NavigationService.navEntriesPage(ctx: context);
                   break;
                 case 1:
+                  NavigationService.navAtlasPage(ctx: context);
+                  break;
+                case 2:
                   NavigationService.navProfilePage(ctx: context);
                   break;
               }
@@ -56,8 +63,10 @@ class _HomePageState extends State<HomePage> {
       body: IndexedStack(
         index: _selectedIndex,
         children: const [
-          EntriesPage(), 
-          ProfilePage()
+          EntriesPage(),
+          // ProfilePage()
+          AtlasPage(),
+          AtlasPage(),
         ],
       ),
     );

@@ -20,3 +20,8 @@ export 'package:equatable/equatable.dart';
 export 'package:cached_network_image/cached_network_image.dart';
 export 'package:carousel_slider/carousel_slider.dart';
 // export 'package:flutter_svg/flutter_svg.dart';
+export 'package:flutter_map/flutter_map.dart'; // Suitable for most situations
+export 'package:flutter_map/plugin_api.dart'; // Only import if required functionality is not exposed by 'flutter_map.dart'
+export 'package:latlong2/latlong.dart' hide Path; // Duplicate Path with Retrofit 
+
+export 'package:flutter_hooks/flutter_hooks.dart' hide Dispose; // Duplicated with provider

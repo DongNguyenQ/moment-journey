@@ -1,11 +1,10 @@
+import 'package:chucker_flutter/chucker_flutter.dart';
 import 'package:flutter/material.dart';
-import 'package:moment_journey/src/commons/utils/platform_utils.dart';
-import 'package:moment_journey/src/features/auth/auth.dart';
-import 'package:moment_journey/src/features/entry_creating/presentation/pages/entry_creating_page.dart';
-import 'package:moment_journey/src/navigation/navigation.dart';
 import '../commons/commons.dart';
 import '../core/di/di.dart';
-import '../features/entries_listing/entries_listing.dart';
+import '../features/auth/auth.dart';
+import '../features/entry/entry.dart';
+import 'home_page.dart';
 
 const String rpRoot = '/';
 const String rnRoot = 'root';
@@ -23,6 +22,8 @@ const String rpEntryDetail = 'entry-detail';
 const String rnEntryDetail = 'entry-detail';
 const String rpEditEntry = 'entry-edit';
 const String rnEditEntry = 'entry-edit';
+const String rpAtlas = '/atlas';
+const String rnAtlas = 'atlas';
 
 const String tabParam = 'tab';
 
@@ -30,7 +31,11 @@ const String rEntryDetailIdParam = 'eid';
 
 
 final GoRouter appRouter = GoRouter(
-    initialLocation: rpLogin,
+    // initialLocation: rpHome,
+    observers: [
+      /// [CHUCKER] 
+      ChuckerFlutter.navigatorObserver
+    ],
     debugLogDiagnostics: inject<PlatformUtils>().isDebugMode,
     urlPathStrategy: UrlPathStrategy.path,
     routes: <GoRoute>[
@@ -43,7 +48,7 @@ final GoRouter appRouter = GoRouter(
       /// Bottom Navigation Route
       GoRoute(
         name: rnHome,
-        path: '/$rnHome/:$tabParam($rnEntries|$rnProfile)',
+        path: '/$rnHome/:$tabParam($rnEntries|$rnProfile|$rnAtlas)',
         pageBuilder: (context, state) {
           final tab = state.params[tabParam] ?? rnEntries;
           int index = 0;
@@ -53,6 +58,9 @@ final GoRouter appRouter = GoRouter(
               break;
             case rnProfile:
               index = 1;
+              break;
+            case rnAtlas:
+              index = 2;
               break;
             default:
               index = 0;
@@ -96,6 +104,11 @@ final GoRouter appRouter = GoRouter(
         path: rpEntries,
         redirect: (state) =>
             state.namedLocation(rnHome, params: {tabParam: rnEntries}),
+      ),
+      GoRoute(
+        path: rpAtlas,
+        redirect: (state) =>
+            state.namedLocation(rnAtlas, params: {tabParam: rnEntries}),
       ),
 
       /// Bottom Navigation Route
